@@ -74,7 +74,6 @@ void main() {
       case '3':
         int totalPrice = 0;
         cart.forEach((productName, quantity) {
-          // 상품 이름으로 가격을 찾기
           for (var product in products) {
             if (product.name == productName) {
               totalPrice += product.price * quantity;
@@ -85,6 +84,8 @@ void main() {
         if (totalPrice > 0) {
           print("장바구니에 총 $totalPrice 원 어치 담으셨네요");
         }
+        else {
+          print("장바구니에 물건이 담기지 않았어요.");
         break;
 
       case '4':
