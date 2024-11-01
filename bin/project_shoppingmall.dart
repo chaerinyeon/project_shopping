@@ -40,7 +40,7 @@ void main() {
     switch (input) {
       case '1':
         productList.showProducts();
-        print(List<Product>);
+        print(List<Product>); // 상품 목록 출력
         break;
 
       case '2':
@@ -48,17 +48,17 @@ void main() {
         String? productName = stdin.readLineSync();
 
         if (productName == null ||
-            !products.any((product) => product.name == productName)) {
-          print("입력 값이 올바르지 않아요.");
+            !products.any((product) => product.name == productName)) { 
+          print("입력 값이 올바르지 않아요."); // 상품의 이름이  null값이거나 상품 목록 이름과 같지 않을 경우 출력
         } else {
-          print('상품 개수를 입력해 주세요.');
+          print('상품 개수를 입력해 주세요.'); // 그 예외의 경우 출력
 
           try {
             String? quantityInput = stdin.readLineSync();
-            int quantity = int.parse(quantityInput!);
+            int quantity = int.parse(quantityInput!); //입력한 상품의 개수를 int 로 변환
 
             if (quantity <= 0) {
-              print("0개보다 많은 개수의 상품만 담을 수 있어요.");
+              print("0개보다 많은 개수의 상품만 담을 수 있어요."); //상품의 개수가 0보다 작은 경우 출력
             } else {
               if (cart.containsKey(productName)) {
                 cart[productName] = cart[productName]! + quantity;
@@ -67,25 +67,25 @@ void main() {
               }
             }
           } catch (e) {
-            print("입력값이 올바르지 않아요");
+            print("입력값이 올바르지 않아요"); //그 외의 입력의 경우 출력
           }
         }
         break;
       case '3':
-        int totalPrice = 0;
+        int totalPrice = 0; //총 가격 초기화
         cart.forEach((productName, quantity) {
           for (var product in products) {
             if (product.name == productName) {
-              totalPrice += product.price * quantity;
+              totalPrice += product.price * quantity; //총 가격 구하는 공식
             }
           }
         });
 
         if (totalPrice > 0) {
-          print("장바구니에 총 $totalPrice 원 어치 담으셨네요");
+          print("장바구니에 총 $totalPrice 원 어치 담으셨네요"); //총 가격이 0보다 크다면 총 가격과 함께 출력
         }
         else {
-          print("장바구니에 물건이 담기지 않았어요.");
+          print("장바구니에 물건이 담기지 않았어요."); // 그 외의 경우 출력
         break;
 
       case '4':
