@@ -1,5 +1,5 @@
 // ignore: unused_import
-import 'dart:ffi';
+// import 'dart:ffi';
 import 'dart:io';
 
 class Product {
@@ -39,25 +39,25 @@ void main() {
 
     switch (input) {
       case '1':
-        productList.showProducts();
+        print(productList); //상품 목록 출력
         break;
 
       case '2':
-        print('상품 이름을 입력해 주세요.');
-        String? productName = stdin.readLineSync();
+        print('상품 이름을 입력해 주세요.'); 
+        String? productName = stdin.readLineSync(); 
 
         if (productName == null ||
             !products.any((product) => product.name == productName)) {
-          print("입력 값이 올바르지 않아요.");
+          print("입력 값이 올바르지 않아요."); // 상품의 이름이 목록에 없거나 맞지 않다면 출력
         } else {
-          print('상품 개수를 입력해 주세요.');
+          print('상품 개수를 입력해 주세요.'); // 예외의 경우 출력
 
           try {
             String? quantityInput = stdin.readLineSync();
-            int quantity = int.parse(quantityInput!);
+            int quantity = int.parse(quantityInput!); //상품의 개수를 int로 변환
 
             if (quantity <= 0) {
-              print("0개보다 많은 개수의 상품만 담을 수 있어요.");
+              print("0개보다 많은 개수의 상품만 담을 수 있어요.");. //상품의 개수가 0보다 적은 경우 출력
             } else {
               if (cart.containsKey(productName)) {
                 cart[productName] = cart[productName]! + quantity;
@@ -73,7 +73,7 @@ void main() {
         break;
 
       case '3':
-        int totalPrice = 0;
+        int totalPrice = 0; //총 가격 초기화
         cart.forEach((productName, quantity) {
           for (var product in products) {
             if (product.name == productName) {
@@ -96,24 +96,24 @@ void main() {
           switch (exitInput) {
             case '5':
               print("프로그램을 종료합니다.");
-              return; // 프로그램 완전 종료
+              return; // 프로그램 종료
 
             case '6':
               print("메인 메뉴로 돌아갑니다.");
-              break; // 종료 확인 루프 탈출, 메인 메뉴로 복귀
+              break; 
 
             default:
               print("잘못된 입력입니다. 다시 입력해 주세요.");
           }
 
           if (exitInput == '5' || exitInput == '6') {
-            break; // 종료 확인 루프 탈출
+            break; 
           }
         }
         break;
 
       default:
-        print("지원하지 않는 기능입니다. 다시 시도해 주세요.");
+        print("지원하지 않는 기능입니다. 다시 시도해 주세요."); //그 외의 경우 출력
         break;
     }
   }
