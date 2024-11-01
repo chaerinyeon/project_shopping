@@ -1,26 +1,26 @@
-#shoppingMall_Console
+# shoppingMall_Console
 
-##Table of contents
+## Table of contents
 1. introduce
 2. Technologies
 3. function
 4. Examples of Use
 
-##Introduce 
+## Introduce 
 This project is a simple console based shopping cart applicarion in Dart.
 
-##Technologies
+## Technologies
 This project is built using dart.
 User interactions are handled using stdin for input and print for output.
 
-##Function
+## Function
 This project provides the following feature
-[1] View Product List : You can see a list of avaiable products along with their prices.
-[2] Add to Cart : You can add items to their cart by typing the product name and quantitiy.
-[3] View Cart Total Price : You can check the total price of items added to the cart
-[4] Exit Program : Option to close the project.
+[1]View Product List : You can see a list of avaiable products along with their prices.
+[2]Add to Cart : You can add items to their cart by typing the product name and quantitiy.
+[3]View Cart Total Price : You can check the total price of items added to the cart
+[4]Exit Program : Option to close the project.
 
-##Examples of Use
+## Examples of Use
 [1] View Products:
    상품 목록 보기
 셔츠 /35000원
